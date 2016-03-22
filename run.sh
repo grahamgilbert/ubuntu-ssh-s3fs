@@ -6,7 +6,7 @@ chmod 600 /etc/passwd-s3fs
 # Mount s3 bucket from environment variable
 mkdir -p /data
 chmod 777 /data
-sudo -H -u ${OPTS_SSH_USER} s3fs -o allow_other  $S3_BUCKET /data
+sudo -H -u ${OPTS_SSH_USER} /bin/bash -c "s3fs -o allow_other $S3_BUCKET /data"
 
 # Configure SSH
 /usr/sbin/sshd-bootstrap
