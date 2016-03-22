@@ -11,4 +11,4 @@ s3fs $S3_BUCKET $S3_LOCATION
 /usr/sbin/sshd-bootstrap
 
 # Run SSH
-/usr/sbin/ssh -D
+/usr/sbin/sshd -D
