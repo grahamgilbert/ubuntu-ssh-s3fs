@@ -6,4 +6,4 @@ WORKDIR s3fs-fuse
 RUN ./autogen.sh && ./configure --prefix=/usr --with-openssl && make && make install && mkdir -p /data && chmod 777 /data
 WORKDIR /
 ADD run.sh /run.sh
-RUN rm -rf /s3fs-fuse && chmod +x /run.sh
+RUN rm -rf /s3fs-fuse && chmod +x /run.sh && echo "user_allow_other" > /etc/fuse.conf
