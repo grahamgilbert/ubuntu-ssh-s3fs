@@ -7,6 +7,7 @@ chmod 600 /etc/passwd-s3fs
 mkdir -p /data
 chmod 777 /data
 su - ${OPTS_SSH_USER} -c "s3fs -o allow_other $S3_BUCKET /data"
+chown -R ${OPTS_SSH_USER} /data
 # Configure SSH
 /usr/sbin/sshd-bootstrap
 
